@@ -15,7 +15,16 @@ source <name of virtualenv>/bin/activate
 
 ### Install requirements (Docs dependencies)
 
-Use the `requirements` file from this repository and copy it to the project folder. In *Terminal* type:
+The requirements include *mysql*, which requires that  *libffi* is installed. To do so open *Terminal* and type:
+
+```
+apt-cache search libffi
+sudo apt-get install -y libffi-dev
+sudo apt-get install python3-dev default-libmysqlclient-dev
+sudo apt-get install python3-dev
+```
+
+Then use the *requirements* file from this repository and copy it to the project folder. In *Terminal* type:
 
 ```
 pip3 install -r requirements.txt
