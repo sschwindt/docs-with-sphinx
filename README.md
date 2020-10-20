@@ -48,8 +48,13 @@ sphinx-quickstart
 ### Setup **`conf.py`**
 After setting up the new *Sphinx* project, open (edit) `/docs/source/conf.py`:
 
-* Uncomment the following lines
+* Uncomment/Add the following lines
 ```
+import os
+import sys
+sys.path.insert(0, os.path.abspath('../..'))
+sys.setrecursionlimit(1500)
+
 ```
 * Add the project root folder to the documentation source by modifying the relative directory in `os.path.abspath('.')` to `os.path.abspath('../..')`. Note that this change is based on the assumption that the *Python* project will be located in `/NewProject` (corresponds to the root directory) and that the docs will live in `/NewProject/docs`.
 * Add to the `extensions` list: `'rinoh.frontend.sphinx'` 
